@@ -14,7 +14,7 @@ export const authMiddleware = async (
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    res.json({ message: "Unauthorizations" });
+    res.status(401).json({ message: "Unauthorization" });
     return;
   }
 
