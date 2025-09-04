@@ -1,4 +1,4 @@
-interface IChatClient {
+export interface IChatUser {
   id: string;
   roomId: string;
   sender: string;

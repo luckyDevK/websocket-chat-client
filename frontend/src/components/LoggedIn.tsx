@@ -1,10 +1,9 @@
 import { Zap, Users } from "lucide-react";
 import type { LucideProps } from "lucide-react";
 
-interface IRoom {
-  id: number;
-  name: string;
-  description: string;
+import type { IRoom } from "@packages/types/room";
+
+export interface IRoomClient extends IRoom {
   icon: React.ForwardRefExoticComponent<
     Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
   >;
@@ -14,7 +13,7 @@ interface IRoom {
 }
 
 interface LoggedInProps {
-  chatRooms: IRoom[];
+  chatRooms: IRoomClient[];
 }
 
 export default function LoggedIn({ chatRooms }: LoggedInProps) {
